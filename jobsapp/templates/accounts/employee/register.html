@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Employee Register
+{% endblock %}
+
+{% block content %}
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcrumb-area">
+    <div class="container h-75">
+        <div class="row h-75 align-items-end">
+            <div class="col-12">
+                <div class="breadcumb--con">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background Curve -->
+    <div class="breadcrumb-bg-curve">
+        <img src="{% static 'app/img/core-img/curve-5.png' %}" alt="">
+    </div>
+</div>
+<!-- ***** Breadcrumb Area End ***** -->
+    <div class="col-lg-6 offset-3">
+        <div class="box">
+            <h3 class="heading">New account</h3>
+            <p class="lead">Not our registered yet?</p>
+            <p class="text-muted">If you have any questions, please feel free to <a href="#">contact us</a>,
+                our customer service center is working for you 24/7.</p>
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name == 'gender' %}
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male gender"
+                                       value="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female"
+                                       value="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+
+                    {% else %}
+
+                        <div class="form-group">
+                            <label for="id_{{ field.name }}">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}"
+                                   class="form-control"
+                                   name="{{ field.name }}"
+                                   id="id_{{ field.name }}"
+                                   placeholder="{{ field.field.widget.attrs.placeholder }}">
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-white-primary"><i class="fa fa-user-md"></i> Register
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

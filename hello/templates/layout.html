@@ -1,0 +1,64 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Agrowdev - Agriculture digitilizing company ">
+    <meta name="keywords" content="agrowdev company, agrowdev android application, agrowdev IOS application, types of agriculture, agriculture information, importance of agriculture, indian agriculture, agriculture help">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all">
+    <meta content="agrowdev" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="en_US" property="og:locale">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Title -->
+    <title>{% block title %} {% endblock %} {{ title }} is a Agriculture digitilizing company</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'app/img/core-img/favicon.ico' %}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    {% block styles %}{% endblock %}
+
+</head>
+
+<body>
+{% include 'header.html' %}
+    {% if messages %}
+
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {# <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+        {% endfor %}
+
+    {% endif %}
+{% include 'load-search.html' %}  
+
+
+{% block content %}{% endblock %}
+     
+{% include 'footer.html' %}
+
+    <!-- ******* All JS Files ******* -->
+    <!-- jQuery js -->
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'app/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <!-- All js -->
+    <script src="{% static 'app/js/uza.bundle.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'app/js/default-assets/active.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
