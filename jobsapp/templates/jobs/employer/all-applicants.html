@@ -1,11 +1,15 @@
 {% extends 'layout.html' %}
+{% load static %}
 {% block title %}
     Applicants
 {% endblock %}
-{% load static %}
-
+{% block styles %}
+ <link rel="stylesheet" href="{% static 'app/css/style.default.css' %}"
+          id="theme-stylesheet">
+{% endblock %}
 {% block content %}
   <!-- ***** Breadcrumb Area Start ***** -->
+  
   <div class="breadcrumb-area">
     <div class="container h-75">
         <div class="row h-75 align-items-end">

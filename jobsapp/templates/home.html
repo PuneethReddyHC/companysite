@@ -1,9 +1,13 @@
 {% extends 'layout.html' %}
+
 {% load static %}
 {% block title %}
     careers
 {% endblock %}
-
+{% block styles %}
+ <link rel="stylesheet" href="{% static 'app/css/style.default.css' %}"
+          id="theme-stylesheet">
+{% endblock %}
 {% block content %}
 
     <!-- ***** Breadcrumb Area Start ***** -->
@@ -98,7 +102,7 @@
                                         <span style="color: #ffffff;" class="badge featured-badge badge-warning">Internship</span>
                                     {% endif %}
                                 </p>
-                                <p>{{ job.description }}</p>
+                                <p>{{ job.description | slice:":150"}}</p>
                             </div>
                         </div>
                     </div>

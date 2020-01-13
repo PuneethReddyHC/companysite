@@ -1,9 +1,13 @@
 {% extends 'layout.html' %}
+
 {% load static %}
 {% block title %}
     Dashboard
 {% endblock %}
-
+{% block styles %}
+ <link rel="stylesheet" href="{% static 'app/css/style.default.css' %}"
+          id="theme-stylesheet">
+{% endblock %}
 {% block content %}
   <!-- ***** Breadcrumb Area Start ***** -->
   <div class="breadcrumb-area">
