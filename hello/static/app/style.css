@@ -239,10 +239,22 @@ input:focus {
 
 .pt-50 {
   padding-top: 50px !important; }
-
+.negative-margin { 
+  margin-top: -230px; }
+.negative-margin-190 { 
+    margin-top: -190px; }
+.negative-margin-140 { 
+    margin-top: -140px; }
+.negative-margin-160 { 
+    margin-top: -160px; }
 .section-padding-80 {
   padding-top: 80px;
   padding-bottom: 80px; }
+  @media only screen and (max-width: 767px) {
+    .section-padding-80 {
+      padding-top: 0px;
+      padding-bottom: 0px; } }
+  
 
 .section-padding-0-80 {
   padding-top: 0;
@@ -1206,7 +1218,8 @@ background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%); }
 
 .uza-about-us-area {
   position: relative;
-  z-index: 1; }
+  z-index: 1; 
+  margin-top:50px ;}
   .uza-about-us-area .about-bg-pattern {
     position: absolute;
     width: 40%;
@@ -1372,13 +1385,13 @@ background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
   position: relative;
   z-index: 1;
   height: 290px;
-  margin-bottom: 40px; }
+  margin-bottom: -150px; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .breadcrumb-area {
-      height: 220px; } }
+      height: 300px; } }
   @media only screen and (max-width: 767px) {
     .breadcrumb-area {
-      height: 200px;
+      height: 250px;
       margin-bottom: 0; } }
   .breadcrumb-area .breadcrumb-bg-curve {
     position: absolute;
@@ -2038,7 +2051,25 @@ background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .single-footer-widget .footer-content h3 {
           font-size: 20px; } }
-
+#style-switch-button {
+		position: fixed;
+		top: 120px;
+    right: 0px;
+    width:60px;
+		border-radius: 0;
+		z-index: 2;
+	}
+	
+#style-switch {
+    width: 300px;
+    padding: 20px;
+    position: fixed;
+    top: 160px;
+    right: 0;
+    background: #fff;
+    border: solid 1px #ced4da;
+    z-index: 2000;
+}
 .copywrite-text {
   position: relative;
   z-index: 1;
@@ -2104,5 +2135,7 @@ background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
   .uza-contact-form textarea.form-control {
     height: 110px;
     padding: 20px; }
+
+
 
 /*# sourceMappingURL=style.css.map */
