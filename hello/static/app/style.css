@@ -333,7 +333,7 @@ input:focus {
   z-index: 99999;
   top: 0;
   left: 0;
-  background-color: #d9e2eb;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
