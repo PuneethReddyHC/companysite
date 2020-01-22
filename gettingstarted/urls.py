@@ -16,6 +16,7 @@ from django.conf.urls import include
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 
+
 sitemaps = {
     "posts": PostSitemap,
 }
