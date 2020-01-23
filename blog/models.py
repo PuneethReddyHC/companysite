@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from gettingstarted import settings
+from Project import settings
 from accounts.managers import UserManager
 STATUS = ((0, "Draft"), (1, "Publish"))
 
